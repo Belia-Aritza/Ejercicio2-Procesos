@@ -13,14 +13,12 @@ public class EjecutaValidaArgumentos {
         pb = new ProcessBuilder("java", "ejercicio1.hijo.ValidaArgumentos");
         File carpetaTrabajo = new File("build/classes/java/main");
         pb.directory(carpetaTrabajo);
-        pb.inheritIO();
     }
 
     public EjecutaValidaArgumentos(String argumento) {
         pb = new ProcessBuilder("java", "ejercicio1.hijo.ValidaArgumentos", argumento);
         File carpetaTrabajo = new File("build/classes/java/main");
         pb.directory(carpetaTrabajo);
-        pb.inheritIO();
     }
 
     public void IniciarProceso() {
@@ -77,6 +75,7 @@ public class EjecutaValidaArgumentos {
         String argumento;
         EjecutaValidaArgumentos padre;
         //como no decia el metodo para pasar el argumento lo he hecho por medio de lectura del teclado a traves de consola
+        System.out.print("Escribe una palabra(cadena) o un numero(entero): ");
         argumento = Entrada.cadena();
         //por las características de la librería entrada, no se puede usar simplemente (argumento == "")
         if (argumento.isEmpty()) {
